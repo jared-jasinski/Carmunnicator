@@ -21,19 +21,19 @@ void setup() {
   pinMode(red_light_pin, OUTPUT);
   pinMode(green_light_pin, OUTPUT);
   pinMode(blue_light_pin, OUTPUT);
- FastLED.addLeds<NEOPIXEL, 6>(leds, NUM_LEDS)
+ FastLED.addLeds<NEOPIXEL, 6>(leds, NUM_LEDS);
 }
 
 void loop() {
 
-  check_switch_state()
+  check_switch_state();
 
   xValue = analogRead(joyX);
   yValue = analogRead(joyY);
   x = map(xValue, 0, 1023, -24, 24);
   y = map(yValue, 0, 1023, -24, 24);
   
-  joystick_action(x,y)
+  joystick_action(x,y);
 
 }
 
@@ -79,7 +79,7 @@ void joystick_action(int x,int y){
 
   //Switch layer toggling
 void check_switch_state(){
-  switch_state = digitalRead(sw)
+  switch_state = digitalRead(sw);
   if (switch_state == HIGH && previous == LOW && millis() - time > debounce) {
     if (state == HIGH)
       state = LOW;
