@@ -4,7 +4,7 @@
 
 #define joyX A0
 #define joyY A1
-#define sw 2
+#define joystick_button 2
 
 CRGB leds[NUM_LEDS];
 int state = HIGH;
@@ -21,7 +21,7 @@ void setup() {
   pinMode(red_light_pin, OUTPUT);
   pinMode(green_light_pin, OUTPUT);
   pinMode(blue_light_pin, OUTPUT);
- FastLED.addLeds<NEOPIXEL, 6>(leds, NUM_LEDS);
+ FastLED.addLeds<NEOPIXEL, 6 > (leds, NUM_LEDS);
 }
 
 void loop() {
@@ -43,8 +43,7 @@ void joystick_action(int x,int y){
   if(x < -12 && y < 12 && y >-12){
     if(STATE){
       //layer one do something
-    }
-    else{
+    }else{
       //layer two do something
     }
   }
@@ -52,8 +51,7 @@ void joystick_action(int x,int y){
   if(x > 12 && y < 12 && y >-12){
     if(STATE){
       //layer one do something
-    }
-    else{
+    }else{
       //layer two do something
     }    
   }
@@ -61,8 +59,7 @@ void joystick_action(int x,int y){
   if(y> 12 && x < 12 && x >-12){
     if(STATE){
       //layer one do something
-    }
-    else{
+    }else{
       //layer two do something
     }    
   }
@@ -70,8 +67,7 @@ void joystick_action(int x,int y){
   if(y < -12 && x < 12 && x >-12){
     if(STATE){
       //layer one do something
-    }
-    else{
+    }else{
       //layer two do something
     }    
   } 
@@ -79,12 +75,16 @@ void joystick_action(int x,int y){
 
   //Switch layer toggling
 void check_switch_state(){
-  switch_state = digitalRead(sw);
+  switch_state = digitalRead(joystick_button);
   if (switch_state == HIGH && previous == LOW && millis() - time > debounce) {
-    if (state == HIGH)
-      state = LOW;
-    else
+    if (state == HIGH){
+      RGB_color(102, 204, 255)
+       state = LOW;
+    }else{
       state = HIGH;
+      RGB_color(153, 153, 255)
+    }
+ 
     time = millis();    
   }
   previous = switch_state;  
