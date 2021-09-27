@@ -137,6 +137,8 @@ void displayHeart(CRGB leds[])
     leds[heart[i]] = CRGB::Red;
   }
   FastLED.show();
+          delay(1000);
+
 }
 
 void displayqMark(CRGB leds[])
@@ -149,6 +151,8 @@ void displayqMark(CRGB leds[])
     leds[qMark[i]] = CRGB::Yellow;
   }
   FastLED.show();
+          delay(1000);
+
 }
 
 void byeHoe(CRGB leds[])
@@ -165,6 +169,8 @@ void byeHoe(CRGB leds[])
     leds[pinkLex[j]] = CRGB::Pink;
   }
   FastLED.show();
+          delay(1000);
+
 }
 
 void niceGTI(CRGB leds[])
@@ -181,6 +187,8 @@ void niceGTI(CRGB leds[])
     leds[niceGTIRed[j]] = CRGB::Red;
   }
   FastLED.show();
+          delay(1000);
+
 }
 
 void devilEmoji(CRGB leds[])
@@ -197,6 +205,7 @@ void devilEmoji(CRGB leds[])
     leds[devilEmojiLightPurple[j]] = CRGB::MediumPurple;
   }
   FastLED.show();
+          delay(1000);
 }
 
 void flushedEmoji(CRGB leds[])
@@ -218,6 +227,8 @@ void flushedEmoji(CRGB leds[])
     leds[flushedEmojiPink[k]] = CRGB::Red;
   }
   FastLED.show();
+          delay(1000);
+
 }
 
 void laughingEmoji(CRGB leds[])
@@ -244,6 +255,8 @@ void laughingEmoji(CRGB leds[])
     leds[lightBlueLaugh[l]] = CRGB::LightBlue;
   }
   FastLED.show();
+          delay(1000);
+
 }
 
 void honkCountDown(CRGB leds[]){
